@@ -1,6 +1,7 @@
 // Filter ToDos by status
 import React, { useState } from 'react';
-export default function FilteredToDoList() {
+
+export const FilteredToDoList = () => {
   // TODO: implement
   return null;
-} 
+}; 

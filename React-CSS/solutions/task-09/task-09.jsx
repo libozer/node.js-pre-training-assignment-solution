@@ -1,6 +1,7 @@
 // Card component
 import React from 'react';
-export default function Card({ children }) {
+
+export const Card = ({ children }) => {
   // TODO: implement
   return null;
-} 
+}; 

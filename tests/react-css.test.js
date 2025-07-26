@@ -2,21 +2,21 @@
 
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import ToDoList from '../React-CSS/solutions/task-01';
-import ToDoItem from '../React-CSS/solutions/task-02';
-import AddToDo from '../React-CSS/solutions/task-03';
-import CompleteToDoList from '../React-CSS/solutions/task-04';
-import FilteredToDoList from '../React-CSS/solutions/task-05';
-import ActiveCount from '../React-CSS/solutions/task-06';
-import StyledToDoItem from '../React-CSS/solutions/task-07';
-import FetchToDos from '../React-CSS/solutions/task-08';
-import Card from '../React-CSS/solutions/task-09';
-import AddToDoForm from '../React-CSS/solutions/task-10';
+import { ToDoList } from '../React-CSS/solutions/task-01/task-01';
+import { ToDoItem } from '../React-CSS/solutions/task-02/task-02';
+import { AddToDo } from '../React-CSS/solutions/task-03/task-03';
+import { CompleteToDoList } from '../React-CSS/solutions/task-04/task-04';
+import { FilteredToDoList } from '../React-CSS/solutions/task-05/task-05';
+import { ActiveCount } from '../React-CSS/solutions/task-06/task-06';
+import { StyledToDoItem } from '../React-CSS/solutions/task-07/task-07';
+import { FetchToDos } from '../React-CSS/solutions/task-08/task-08';
+import { Card } from '../React-CSS/solutions/task-09/task-09';
+import { AddToDoForm } from '../React-CSS/solutions/task-10/task-10';
 
 // 1. ToDoList
 it('ToDoList renders todo titles', () => {
   render(<ToDoList todos={[{ id: 1, title: 'Test', completed: false }]} />);
-  expect(screen.getByText('Test')).toBeInTheDocument();
+  expect(screen.getByText('Test - not completed')).toBeInTheDocument();
 });
 
 // 2. ToDoItem

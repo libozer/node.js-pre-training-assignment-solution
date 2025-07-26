@@ -1,6 +1,7 @@
 // Add ToDo with useState
 import React, { useState } from 'react';
-export default function AddToDo() {
+
+export const AddToDo = () => {
   // TODO: implement
   return null;
-} 
+}; 

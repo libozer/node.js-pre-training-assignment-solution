@@ -1,19 +1,19 @@
 ---
-topic: "Set Data Structure"
+topic: "Testing with Jest"
 taskNumber: 9
 ---
 
-## Task 9: Get Unique ToDo Titles
+## Task 9: Write Unit Tests for Business Logic
 
 **Description:**  
-Write a function `uniqueTitles` that takes an array of todos and returns an array of unique titles.
+Ensure reliability by writing comprehensive unit tests for `TodoService` and the repository.
 
-**Example:**
-```js
-const todos = [
-  { id: 1, title: 'Buy milk', completed: false },
-  { id: 2, title: 'Buy milk', completed: true },
-  { id: 3, title: 'Read book', completed: false }
-];
-uniqueTitles(todos); // ['Buy milk', 'Read book']
-``` 
+**Requirements:**
+1. Add Jest to the project (use `ts-jest` for TypeScript support).
+2. Create `tests/todo-service.spec.ts` and cover at minimum:
+   - successful creation of a todo  
+   - toggling status  
+   - search returns matching items  
+   - error is thrown when updating non-existing id
+3. Mock the network latency (`setTimeout`) to keep tests fast.
+4. Achieve at least **90 %** line coverage for service and repository files.

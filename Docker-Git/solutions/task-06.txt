@@ -1,2 +1,0 @@
-# Git: Initialize repository for ToDo app
-# TODO: implement 

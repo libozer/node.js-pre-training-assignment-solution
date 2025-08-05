@@ -1,2 +1,0 @@
-# Git: Add and commit all files for ToDo app
-# TODO: implement 

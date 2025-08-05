@@ -1,2 +1,0 @@
-# Git: Merge feature branch into main for ToDo app
-# TODO: implement 

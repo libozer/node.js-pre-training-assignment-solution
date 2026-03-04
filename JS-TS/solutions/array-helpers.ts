@@ -27,7 +27,22 @@ export function filterArray<T>(
   source: readonly T[],
   predicate: (item: T, index: number) => boolean,
 ): T[] {
-  throw new Error("filterArray: not implemented");
+  if (source === null || source === undefined) {
+    throw new Error("source is null or undefind");
+  }
+
+  const result: T[] = [];
+
+  let index = 0;
+
+  for (let item of source) {
+    const value = predicate(item, index);
+    if (value === true) {
+      result.push(item);
+    }
+    index++;
+  }
+  return result;
 }
 
 export function reduceArray<T, R>(
@@ -35,19 +50,59 @@ export function reduceArray<T, R>(
   reducer: (acc: R, item: T, index: number) => R,
   initial: R,
 ): R {
-  throw new Error("reduceArray: not implemented");
+  if (source === undefined || source === null) {
+    throw new Error("source is null or undefind");
+  }
+
+  let index = 0;
+
+  let accum: R = initial;
+
+  for (let item of source) {
+    let value = reducer(accum, item, index);
+    accum = value;
+    index++;
+  }
+  return accum;
 }
 
 export function partition<T>(
   source: readonly T[],
   predicate: (item: T) => boolean,
 ): [T[], T[]] {
-  throw new Error("partition: not implemented");
+  if (source === undefined || source === null) {
+    throw new Error("source is null or undefind");
+  }
+
+  const result: [T[], T[]] = [[], []];
+
+  for (let item of source) {
+    if (predicate(item) === true) {
+      result[0].push(item);
+    } else {
+      result[1].push(item);
+    }
+  }
+  return result;
 }
 
 export function groupBy<T, K extends PropertyKey>(
   source: readonly T[],
   keySelector: (item: T) => K,
 ): Record<K, T[]> {
-  throw new Error("groupBy: not implemented");
+  if (source === undefined || source === null) {
+    throw new Error("source is null or undefind");
+  }
+
+  const result = {} as Record<K, T[]>;
+
+  for (let item of source) {
+    let value = keySelector(item);
+    if (!result[value]) {
+      result[value] = [];
+    }
+    result[value].push(item);
+  }
+
+  return result;
 }
